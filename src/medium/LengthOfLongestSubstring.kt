@@ -18,3 +18,27 @@ fun lengthOfLongestSubstring(s: String): Int {
     }
     return max
 }
+
+fun characterReplacement(s: String, k: Int): Int {
+    var left = 0
+    var right = 0
+    var max = 0
+    var maxCount = 0
+    val map = HashMap<Char, Int>()
+
+    while (right < s.length) {
+        val currentChar = s[right]
+        map[currentChar] = map.getOrDefault(currentChar, 0) + 1
+        maxCount = Math.max(maxCount, map[currentChar]!!)
+
+        while (right - left + 1 - maxCount > k) {
+            val leftChar = s[left]
+            map[leftChar] = map[leftChar]!! - 1
+            left++
+        }
+
+        max = Math.max(max, right - left + 1)
+        right++
+    }
+    return max
+}
