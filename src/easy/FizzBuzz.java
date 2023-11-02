@@ -30,16 +30,16 @@ Given an integer n, return a string array answer (1-indexed) where:
 public class FizzBuzz {
     public List<String> fizzBuzz(int n) {
         List<String> ansList = new ArrayList<>();
-        for(int i=1;i<=n; i++){
+        for (int i = 1; i <= n; i++) {
 
-            if(i%3==0 && i%5 == 0){
+            if (i % 3 == 0 && i % 5 == 0) {
                 ansList.add("FizzBuzz");
-            }else if(i%3==0){
+            } else if (i % 3 == 0) {
                 ansList.add("Fizz");
-            }else if(i%5==0){
+            } else if (i % 5 == 0) {
                 ansList.add("Buzz");
-            }else{
-                ansList.add(i+ "");
+            } else {
+                ansList.add(i + "");
             }
         }
         return ansList;
